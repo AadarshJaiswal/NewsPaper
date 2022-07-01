@@ -1,0 +1,55 @@
+.parent {
+    padding: 20px;
+  }
+  .card {
+    border-style: ridge;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  .for-btns {
+    display: flex;
+    justify-content: space-between;
+  }
+  .btn-rate {
+    border-radius: 25px;
+    padding: 10px;
+    margin: 2px;
+    background-color: lightgreen;
+  }
+  .plus_btn {
+    width: 44px;
+    height: 44px;
+    /* background-color: green; */
+  }
+  .plus_btn {
+    font-size: 50px;
+  }
+  .plus_btn:hover {
+    cursor: pointer;
+  }
+  table {
+    width: 100%;
+  }
+  
+  .mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .mat-row:hover .mat-cell {
+    border-color: currentColor;
+  }
+  
+  .demo-row-is-clicked {
+    font-weight: bold;
+  }
+  .btn-logout
+  {cursor: pointer;
+
+  }
+  
+  

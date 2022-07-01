@@ -1,0 +1,35 @@
+<div class="parent">
+  <mat-icon (click)="closeRegistrationForm()" class="close_btn">close</mat-icon>
+  <h2>Subscription</h2>
+  <form class="subscribe-form">
+       <mat-label>Newspaper Name</mat-label>
+      <div><b><i>{{ newspapername }}</i></b></div>
+      <br>
+     <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Select Subscription Type</mat-label>
+      <mat-select [(value)]="selected">
+       <mat-option value="mon">Monthly</mat-option>
+        <mat-option value="qua">Quaterly</mat-option>
+        <mat-option value="yr">Annualy</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <ng-container *ngIf="selected == 'yr'">
+      <label for="">You choose Yearly Subscription {{ yprice }}/-</label>
+    </ng-container>
+    <ng-container *ngIf="selected == 'qua'">
+      <label for="">You choose Quaterly Subscription {{ wprice }}/-</label>
+    </ng-container>
+    <ng-container *ngIf="selected == 'mon'">
+      <label for="">You choose Monthly Subscription {{ mprice }}/-</label>
+    </ng-container>
+    <br />
+    <button
+      mat-raised-button
+      style="margin: 5px"
+      color="primary"
+      (click)="Subscribe()"
+    >
+      Subscribe
+    </button>
+  </form>
+</div>

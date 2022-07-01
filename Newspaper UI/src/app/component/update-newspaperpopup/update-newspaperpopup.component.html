@@ -1,0 +1,42 @@
+<mat-icon (click)="closeRegistrationForm()" class="close_btn">close</mat-icon>
+<h2>Update News Paper </h2>
+<form class="update-newspaer-form" [formGroup]="updateNewspaperform"
+(ngSubmit)="updateNewspaper()">
+    <mat-form-field class="form-field" appearance="fill">
+        <mat-label>NewsPaper Id</mat-label>
+        <input matInput disabled="true"  [(ngModel)]="id" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="fill">
+    <mat-label>NewsPaper Name</mat-label>
+    <input matInput  formControlName="name">
+    <mat-error *ngIf="updateNewspaperform.get('name')?.invalid && (updateNewspaperform.get('name')?.dirty || updateNewspaperform.get('name')?.touched) && updateNewspaperform.hasError('required','name')">
+      Name is required
+    </mat-error>
+
+  </mat-form-field>
+  
+  <mat-form-field class="form-field" appearance="fill">
+    <mat-label>yearly Price</mat-label>
+    <input matInput type="number" formControlName="yPrice" >
+    <mat-error *ngIf="updateNewspaperform.get('yPrice')?.invalid && (updateNewspaperform.get('yPrice')?.dirty || updateNewspaperform.get('yPrice')?.touched) && updateNewspaperform.hasError('required','yPrice')">
+      Yearly Price is required
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="form-field" appearance="fill">
+    <mat-label>Quaterly Price</mat-label>
+    <input matInput   type="number"  formControlName="wPrice" >
+    <mat-error *ngIf="updateNewspaperform.get('wPrice')?.invalid && (updateNewspaperform.get('wPrice')?.dirty || updateNewspaperform.get('wPrice')?.touched) && updateNewspaperform.hasError('required','wPrice')">
+      Quaterly Price is required
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="form-field" appearance="fill">
+    <mat-label>Monthly Price</mat-label>
+    <input matInput type="number" formControlName="mPrice" >
+    <mat-error *ngIf="updateNewspaperform.get('mPrice')?.invalid && (updateNewspaperform.get('mPrice')?.dirty || updateNewspaperform.get('mPrice')?.touched) && updateNewspaperform.hasError('required','mPrice')">
+      Monthly Price is required
+    </mat-error>
+  </mat-form-field>
+  <button mat-raised-button  style="margin: 5px;" color="primary"   [disabled]="!updateNewspaperform.valid">Update</button>
+ 
+</form>

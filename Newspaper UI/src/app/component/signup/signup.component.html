@@ -1,0 +1,146 @@
+<app-navbar></app-navbar>
+<div class="img">
+  <br><br>
+<div fxLayoutAlign="center center" fxFlexFill class="main-div" class="img">
+  <mat-card fxFlex="25">
+    <mat-toolbar class="center-text" color="primary">SignUp</mat-toolbar>
+    <form
+      (ngSubmit)="postData()"
+      fxLayoutAlign="stretch"
+      fxLayout="column"
+      class="form-signup"
+      [formGroup]="signupGroup"
+    >
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          placeholder="Name"
+          name="name"
+          formControlName="name"
+        />
+        <mat-error
+          *ngIf="
+            !signupGroup.hasError('required', 'name') &&
+            signupGroup.hasError('pattern', 'name')
+          "
+        >
+          Name Must be string
+        </mat-error>
+        <mat-error
+          *ngIf="
+            signupGroup.get('name')?.invalid &&
+            (signupGroup.get('name')?.dirty ||
+              signupGroup.get('name')?.touched) &&
+            signupGroup.hasError('required', 'name')
+          "
+        >
+          Name is required
+        </mat-error>
+      </mat-form-field>
+
+      <!-- <span class="errors" *ngIf="signupGroup.controls['name'].dirty && signupGroup.hasError('required','name')">* Required</span> -->
+      <mat-form-field style="padding-top: 4px">
+        <input
+          matInput
+          type="email"
+          placeholder="Email"
+          name="email"
+          formControlName="email"
+        />
+        <mat-error
+          *ngIf="
+            !signupGroup.hasError('required', 'email') &&
+            signupGroup.hasError('pattern', 'email')
+          "
+        >
+          Please enter a valid email address
+        </mat-error>
+        <mat-error
+          *ngIf="
+            signupGroup.get('email')?.invalid &&
+            (signupGroup.get('email')?.dirty ||
+              signupGroup.get('email')?.touched) &&
+            signupGroup.hasError('required', 'email')
+          "
+        >
+          Email is required
+        </mat-error>
+      </mat-form-field>
+      <!-- <span class="errors" *ngIf="signupGroup.controls['email'].dirty && signupGroup.hasError('required','email')">* Required</span> -->
+      <mat-form-field style="padding-top: 4px">
+        <input
+          matInput
+          type="text"
+          placeholder="Contact"
+          name="contact"
+          formControlName="contact"
+        />
+        <mat-error
+          *ngIf="
+            !signupGroup.hasError('required', 'contact') &&
+            signupGroup.hasError('pattern', 'contact')
+          "
+        >
+          Contact Number Must be 10 digits
+        </mat-error>
+        <mat-error
+          *ngIf="
+            signupGroup.get('contact')?.invalid &&
+            (signupGroup.get('contact')?.dirty ||
+              signupGroup.get('contact')?.touched) &&
+            signupGroup.hasError('required', 'contact')
+          "
+        >
+          Contact Number is required
+        </mat-error>
+      </mat-form-field>
+
+      <!-- <span class="errors" *ngIf="signupGroup.controls['contact'].dirty && signupGroup.hasError('required','contact')">* Required</span> -->
+      <mat-form-field style="padding-top: 4px">
+        <input
+          matInput
+          [type]="showPassword ? 'text' : 'password'"
+          placeholder="Password"
+          name="password"
+          formControlName="password"
+        />
+        <!--  -->
+        <mat-icon matSuffix (click)="togglePasswordVisibility()">
+          {{ showPassword ? "visibility_off" : "visibility" }}</mat-icon
+        >
+        <!--  -->
+        <mat-error *ngIf="!signupGroup.hasError('required', 'password')">
+          Password length must be greater than or equal to 8 and password must
+          contain one or more uppercase , lowercase , numeric and special
+          characters
+        </mat-error>
+        <mat-error
+          *ngIf="
+            signupGroup.get('password')?.invalid &&
+            (signupGroup.get('password')?.dirty ||
+              signupGroup.get('password')?.touched) &&
+            signupGroup.hasError('required', 'password')
+          "
+        >
+          Password is required
+        </mat-error>
+      </mat-form-field>
+      <!-- <span class="errors" *ngIf="signupGroup.controls['password'].dirty && signupGroup.hasError('required','password')">* Required</span> -->
+
+      <button
+        mat-raised-button
+        style="margin-top: 3em"
+        color="primary"
+        type="submit"
+        [disabled]="!signupGroup.valid"
+      >
+        SignUp
+      </button>
+      <a routerLink="/login" style="text-align: center; margin-top: 10px"
+        >Existing User</a
+      >
+    </form>
+  </mat-card>
+</div>
+</div>

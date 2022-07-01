@@ -1,0 +1,109 @@
+<div class="parent">
+  <mat-icon (click)="closeRegistrationForm()" class="close_btn">close</mat-icon>
+  <h2>Vendor Registration Form</h2>
+  <form class="vendor-form" [formGroup]="vendorform" (ngSubmit)="addVendor()">
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Vender Email Id</mat-label>
+      <input
+        matInput
+        placeholder="Ex. please fill email id.."
+        formControlName="email"
+      />
+      <mat-error *ngIf="!vendorform.hasError('required','email') && vendorform.hasError('pattern','email')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="vendorform.get('email')?.invalid && (vendorform.get('email')?.dirty || vendorform.get('email')?.touched) && vendorform.hasError('required','email')">
+        Email is required
+      </mat-error>
+     
+    </mat-form-field>
+    <!-- <span class="errors" *ngIf="vendorform.controls['email'].dirty && vendorform.hasError('required','email')">* Required</span> -->
+    
+      
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Vendor's name</mat-label>
+      <input
+        matInput
+        placeholder="Ex. Ram"
+        formControlName="vendorName"
+      />
+      <mat-error *ngIf="vendorform.get('vendorName')?.invalid && (vendorform.get('vendorName')?.dirty || vendorform.get('vendorName')?.touched) && vendorform.hasError('required','vendorName')">
+        Name is required
+      </mat-error>
+     
+    </mat-form-field>
+    <!-- <span class="errors" *ngIf="vendorform.controls['vendorName'].dirty && vendorform.hasError('required','vendorName')">* Required</span> -->
+    
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Agency Name</mat-label>
+      <input
+        matInput
+        placeholder="Ex. please fill agency Details.."
+        formControlName="agencyName"
+      />
+      <mat-error *ngIf="vendorform.get('agencyName')?.invalid && (vendorform.get('agencyName')?.dirty || vendorform.get('agencyName')?.touched) && vendorform.hasError('required','agencyName')">
+        Agency Name is required
+      </mat-error>
+     
+    </mat-form-field>
+    <!-- <span class="errors" *ngIf="vendorform.controls['agencyName'].dirty && vendorform.hasError('required','agencyName')">* Required</span> -->
+    
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Contact Number</mat-label>
+      <input
+        matInput
+        type="tel"
+        formControlName="contactNo"
+      />
+      <mat-error *ngIf="!vendorform.hasError('required','contactNo') && vendorform.hasError('pattern','contactNo')">
+        Contact Number Must be 10 digits
+      </mat-error>
+      <mat-error *ngIf="vendorform.get('contactNo')?.invalid && (vendorform.get('contactNo')?.dirty || vendorform.get('contactNo')?.touched) && vendorform.hasError('required','contactNo')">
+        Contact Number is required
+      </mat-error>
+      
+    </mat-form-field>
+    <!-- <span class="errors" *ngIf="vendorform.controls['contactNo'].dirty && vendorform.hasError('required','contactNo')">* Required</span> -->
+   
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Password</mat-label>
+      <!-- <input
+        type="password"
+        matInput
+        placeholder="Ex. please fill password.."
+        
+        formControlName="password"
+        /> -->
+        <input matInput [type]="showPassword ? 'text' : 'password'" placeholder="Password" name="password"  formControlName="password" >
+        <!--  -->
+        <mat-icon matSuffix (click)="togglePasswordVisibility()" style="cursor: pointer;"> {{showPassword?'visibility_off':'visibility'}}</mat-icon>
+        <!--  -->
+        <mat-error *ngIf="!vendorform.hasError('required','password')">
+            Password length must be greater than or equal to 8 and password must contain one or more uppercase , lowercase , numeric and special characters
+          </mat-error>
+          <mat-error *ngIf="vendorform.get('password')?.invalid && (vendorform.get('password')?.dirty || vendorform.get('password')?.touched) && vendorform.hasError('required','password') ">
+            Password is required
+          </mat-error>
+
+       
+    </mat-form-field>
+    <!-- <span class="errors" *ngIf="vendorform.controls['password'].dirty && vendorform.hasError('required','password')">* Required
+      <br>
+    </span> -->
+    
+
+    <!-- <button
+      mat-raised-button
+      style="margin: 5px"
+      color="primary"
+      (click)="addVendor()"
+    >
+      Register
+    </button> -->
+    <br>
+    <br>
+    <button type="submit" mat-raised-button
+    style="margin: 5px"
+    color="primary" [disabled]="!vendorform.valid">Register</button>
+  </form>
+</div>

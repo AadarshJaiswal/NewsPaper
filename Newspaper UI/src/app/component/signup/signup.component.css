@@ -1,0 +1,25 @@
+.main-div mat-card{
+    padding: 0px;
+}
+.form-signup{
+    padding: 20px;
+}
+.center-text {
+    display: flex;
+    justify-content: center;
+  }
+  .example-additional-selection {
+    opacity: 0.75;
+    font-size: 0.75em;
+  }
+  .errors
+  {
+      color: red;
+  }
+  .img{
+    background-image: url(../../img/bg2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 3em;
+     
+}

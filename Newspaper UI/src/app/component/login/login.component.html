@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>
+<div class="img">
+<div class="background">
+  <div  fxFlexFill class="main-div" fxLayoutAlign="center center">
+    <mat-card fxFlex="25">
+      <mat-toolbar class="center-text" color="primary">Login Page</mat-toolbar>
+      <form
+        (ngSubmit)="userLogin()"
+        fxLayoutAlign="stretch"
+        fxLayout="column"
+        class="form-login"
+        [formGroup]="login"
+      >
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Username"
+            name="email"
+            formControlName="email"
+          />
+          <mat-error *ngIf="!login.hasError('required','email') && login.hasError('pattern','email')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="login.get('email')?.invalid && (login.get('email')?.dirty || login.get('email')?.touched) && login.hasError('required','email')">
+            Email is required
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput [type]="showPassword ? 'text' : 'password'" placeholder="Password" name="password"  formControlName="password" >
+      
+          <mat-icon matSuffix (click)="togglePasswordVisibility()"> {{showPassword?'visibility_off':'visibility'}}</mat-icon>
+         <mat-error *ngIf="!login.hasError('required','password')">
+            Password length must be greater than or equal to 8 and password must contain one or more uppercase , lowercase , numeric and special characters
+          </mat-error>
+          <mat-error *ngIf="login.get('password')?.invalid && (login.get('password')?.dirty || login.get('password')?.touched) && login.hasError('required','password') ">
+            Password is required
+          </mat-error>
+
+        </mat-form-field>
+        <br>
+        <br />
+        <button mat-raised-button color="primary" type="submit" [disabled]="!login.valid">Login</button>
+
+        <a routerLink="/signup" style="text-align: center; margin-top: 10px"
+          >New User</a
+        >
+      </form>
+    </mat-card>
+  </div>
+</div>
+</div>

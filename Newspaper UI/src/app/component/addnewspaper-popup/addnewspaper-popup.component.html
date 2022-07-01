@@ -1,0 +1,71 @@
+<div class="parent">
+  <mat-icon (click)="closeRegistrationForm()" class="close_btn">close</mat-icon>
+  <h2>Add NewsPaper</h2>
+  <form class="newspaper-form" [formGroup]="newspaperform" (ngSubmit)="addNewspaper()">
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>NewsPaper Name</mat-label>
+      <input
+        matInput
+        placeholder="Please fill Name.."
+        formControlName="newspapername"
+      />
+      <mat-error *ngIf="newspaperform.get('newspapername')?.invalid && (newspaperform.get('newspapername')?.dirty || newspaperform.get('newspapername')?.touched) && newspaperform.hasError('required','newspapername')">
+        Newspaper Name  is required
+      </mat-error>
+    </mat-form-field>
+    <!-- <div *ngIf="error.value && error.name == 'newspaperName'" class="errors">
+        {{ error.desc }}
+      </div> -->
+    <br />
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Monthly Price</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="mprice"
+      />
+      <mat-error *ngIf="newspaperform.get('mprice')?.invalid && (newspaperform.get('mprice')?.dirty || newspaperform.get('mprice')?.touched) && newspaperform.hasError('required','mprice')">
+        Monthly price is required
+      </mat-error>
+    </mat-form-field>
+    <!-- <div *ngIf="error.value && error.name == 'wPrice'" class="errors">
+        {{ error.desc }}
+      </div> -->
+    <br />
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Quaterly Price</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="wprice"
+      />
+      <mat-error *ngIf="newspaperform.get('wprice')?.invalid && (newspaperform.get('wprice')?.dirty || newspaperform.get('wprice')?.touched) && newspaperform.hasError('required','wprice')">
+        Quaterly price is required
+      </mat-error>
+    </mat-form-field>
+    <!-- <div *ngIf="error.value && error.name == 'mPrice'" class="errors">
+        {{ error.desc }}
+      </div> -->
+    <br />
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Yearly Price</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="yprice"
+      />
+      <mat-error *ngIf="newspaperform.get('yprice')?.invalid && (newspaperform.get('yprice')?.dirty || newspaperform.get('yprice')?.touched) && newspaperform.hasError('required','yprice')">
+        Yearly price is required
+      </mat-error>
+    </mat-form-field>
+    <br />
+
+    <button
+      mat-raised-button
+      style="margin: 5px"
+      color="primary"
+      [disabled]="!newspaperform.valid">
+      Add Details
+    </button>
+  </form>
+</div>

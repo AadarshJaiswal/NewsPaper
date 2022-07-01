@@ -1,0 +1,21 @@
+.update-newspaer-form {
+    min-width: 150px;
+    max-width: 450px;
+
+  }
+  .form-field{
+    width: 100%;
+  }
+  .errors {
+    color: red;
+  }
+.close_btn{
+  margin-left: 18em;
+  /* display: flex; */
+  /* justify-content: end;
+   */
+   /* text-align: right; */
+  cursor: pointer;
+}  
+
+

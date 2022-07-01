@@ -1,0 +1,32 @@
+.main-div mat-card{
+    padding: 0px;
+}
+.main-div{
+    padding-bottom: 10em;
+}
+.background
+{
+    padding-top: 6em;
+}
+.form-login{
+    padding: 20px;
+}
+.center-text {
+    display: flex;
+    justify-content: center;
+  }
+  .example-additional-selection {
+    opacity: 0.75;
+    font-size: 0.75em;
+  }
+  .errors
+  {
+      color: red;
+  }
+  .img{
+    background-image: url(../../img/bg1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 6em;
+     
+}

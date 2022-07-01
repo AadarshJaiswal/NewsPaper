@@ -1,0 +1,36 @@
+<mat-icon (click)="closeRegistrationForm()" class="close_btn">close</mat-icon>
+<h2>Update Vendor</h2>
+<form class="update-vendor-form" [formGroup]="updatevendorform" (ngSubmit)="updateVendor()">
+    <mat-form-field class="form-field" appearance="fill">
+        <mat-label>Email Id</mat-label>
+        <input matInput  disabled="true" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="fill">
+    <mat-label>Vendor's name</mat-label>
+    <input matInput  formControlName="name">
+    <mat-error *ngIf="updatevendorform.get('name')?.invalid && (updatevendorform.get('name')?.dirty || updatevendorform.get('name')?.touched) && updatevendorform.hasError('required','name')">
+      Name is required
+    </mat-error>
+
+  </mat-form-field>
+  
+  <mat-form-field class="form-field" appearance="fill">
+    <mat-label>Agency Name</mat-label>
+    <input matInput  formControlName="agencyName">
+    <mat-error *ngIf="updatevendorform.get('agencyName')?.invalid && (updatevendorform.get('agencyName')?.dirty || updatevendorform.get('agencyName')?.touched) && updatevendorform.hasError('required','agencyName')">
+      Agency Name is required
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="form-field" appearance="fill">
+    <mat-label>Contact Number</mat-label>
+    <input matInput   type="tel"  formControlName="contact" >
+    <mat-error *ngIf="updatevendorform.get('contact')?.invalid && (updatevendorform.get('contact')?.dirty || updatevendorform.get('contact')?.touched) && updatevendorform.hasError('required','contact')">
+      Contact Number is required
+    </mat-error>
+    <mat-error *ngIf="!updatevendorform.hasError('required','contact') && updatevendorform.hasError('pattern','contact')">
+      Contact Number Must be 10 digits
+    </mat-error>
+  </mat-form-field> <button mat-raised-button  style="margin: 5px;" color="primary" [disabled]="!updatevendorform.valid" >Update</button>
+ 
+</form>
