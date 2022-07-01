@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
+<h1> Newspaper</h1>
+<h2>Objective</h2>
+<p>A application which is use to manage Vendor Details,Newspaper Detials,User Details,Subsscription Details. Here, Administrator can view User Details, Vendor Details, Newspaper Details and Subscription Details.</p>
