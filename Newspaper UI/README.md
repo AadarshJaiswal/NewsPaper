@@ -1,4 +1,4 @@
-# Login
+<!-- # Login
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
 
@@ -25,9 +25,60 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
+ -->
 
 
 <h1> Newspaper</h1>
 <h2>Objective</h2>
-<p>A application which is use to manage Vendor Details,Newspaper Detials,User Details,Subsscription Details. Here, Administrator can view User Details, Vendor Details, Newspaper Details and Subscription Details.</p>
+<p>A application which is use to manage Vender,Newspaper, User and Subsscription Details. Here, Administrator can view User Details, Vendor Details, Newspaper Details and Subscription Details.</p>
+<h2>User of System</h2>
+<ul><li>Administrator</li><li>Vender</li><li>User</li></ul>
+<br>
+<h2>Functional Requirements</h2>
+<ol><h3><li>Administrator</li></h3>
+  <p>
+    <ul>
+      <li>Can login and logout.</li>
+      <li>Can add vender.</li>
+      <li>Can view vender details.</li>
+      <li>Can view user details.</li>
+      <li>Can manage user.</li>
+      <li>Can view newspaper details.</li>
+      <li>Can view all subscribers details.</li>
+   </ul>
+  </p>
+  <h3><li>Vendor</li></h3>
+   <p>
+    <ul>
+      <li>Can login and logout.</li>
+      <li>Can add Newspaper.</li>
+      <li>Can view his all Newspaper Details</li>
+      <li>Can manage Newspaper.</li>
+      <li>Can view all there subscriber's.</li>
+   </ul>
+  </p>
+  <h3><li>User</li></h3>
+   <p>
+    <ul>
+      <li>Can login and logout.</li>
+      <li>Can view all newspaper.</li>
+      <li>Can subscribe the newspaper with subscription price list.</li>
+      <li>Can manage there profile.</li>
+    </ul>
+  </p>
+  </ol>
+
+<br>
+<h2>Tools Used</h2><br>
+<p>
+1.	Backend:- Eclipse <br>
+2.	Frontend:- Visual Studio Code<br>
+</p>
+<br>
+<h2>Technology Used</h2><br>
+<p>
+1.  Backend:-Spring Boot(Rest API)<br>
+2.  Front End:-Angular 11<br> 
+3.  Database:-Mysql<br>
+  </p>
+
